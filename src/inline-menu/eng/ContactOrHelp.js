@@ -7,7 +7,7 @@ const username = config.CONTACT_USERNAME;
 
 const contact = (ctx) =>  {
   ctx.reply(text, Markup.inlineKeyboard([
-    [Markup.urlButton("Contact us", `https://t.me/${username}`)],
+    [Markup.urlButton("📩 Contact us", `https://t.me/${username}`)],
     [Markup.callbackButton("↩️ Back to Registration", "English_lang")],
   ])
   .extra());
