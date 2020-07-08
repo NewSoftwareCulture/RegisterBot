@@ -7,7 +7,6 @@ import bodyParser from 'body-parser';
 import Telegraf from 'telegraf';
 import { Logger } from './utils'
 import inline from './inline-menu/index';
-// import actions from './inline-menu/'
 import config from '../config';
 
 const uri = process.env.MONGO_URI || config.MONGO_URI;
@@ -34,16 +33,9 @@ app.get('/', async (req, res) => {
 // bot.command('hipster', Telegraf.reply('λ'))
 
 const { start, actions_eng } = inline;
-// inline.
 
 start(bot);
 actions_eng(bot);
-// .About(bot);
-// actions_eng.BasicsAndTutorial(bot);
-// actions_eng.ContactOrHelp(bot);
-// actions_eng.RandomResult(bot);
-// actions_eng.RegistrationStatus(bot);
-
 
 bot.launch(console.log('\nMagic bot has started!\n'));
 

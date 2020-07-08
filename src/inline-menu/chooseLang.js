@@ -13,7 +13,6 @@ const lang = (bot) => {
 
     bot.action('English_lang', (ctx, next) => {
       return main.main_eng(this, ctx)
-      // return ctx.reply('English lang active!').then(() => next())
     });
     bot.action('Deutsch_lang', (ctx, next) => {
       return ctx.reply('Deutsch lang active!').then(() => next())
