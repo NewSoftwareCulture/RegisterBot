@@ -8,7 +8,7 @@ const text_3 = `ℹ️ 3/3\n\nÜber mich und warum diese Gruppe...\n\nDa ich nic
 const About_1 = (ctx) =>  {
   ctx.reply(text_1, Markup.inlineKeyboard([
     [Markup.callbackButton("Weiter ➡️", "About_2")],
-    [Markup.callbackButton("↩️ Zurück zur Anmeldung", "English_lang")],
+    [Markup.callbackButton("↩️ Zurück zur Anmeldung", "Deutsch_lang")],
   ])
   .extra());
 };
@@ -16,7 +16,7 @@ const About_1 = (ctx) =>  {
 const About_2 = (ctx) =>  {
   ctx.reply(text_2, Markup.inlineKeyboard([
     [Markup.callbackButton("⬅️ Zurück", "About_1"), Markup.callbackButton("Weiter ➡️", "About_3")],
-    [Markup.callbackButton("↩️ Zurück zur Anmeldung", "English_lang")],
+    [Markup.callbackButton("↩️ Zurück zur Anmeldung", "Deutsch_lang")],
   ])
   .extra());
 }
@@ -24,7 +24,7 @@ const About_2 = (ctx) =>  {
 const About_3 = (ctx) =>  {
   ctx.reply(text_3, Markup.inlineKeyboard([
     [Markup.callbackButton("⬅️ Zurück", "About_2")],
-    [Markup.callbackButton("↩️ Zurück zur Anmeldung", "English_lang")],
+    [Markup.callbackButton("↩️ Zurück zur Anmeldung", "Deutsch_lang")],
   ])
   .extra());
 }
