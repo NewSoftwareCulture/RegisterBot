@@ -1,3 +1,3 @@
-module.exports = {
-    example: require('./example'),
+export default {
+    deeplink: require('./deeplink').default,
 }

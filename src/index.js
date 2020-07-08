@@ -3,10 +3,12 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import Promise from 'bluebird';
 import bodyParser from 'body-parser';
-// import routes from './routes';
 import Telegraf from 'telegraf';
 import { Logger } from './utils'
+
 import inline from './inline-menu/index';
+import routes from './routes';
+import admin from './admin/index';
 import config from '../config';
 
 const uri = process.env.MONGO_URI || config.MONGO_URI;
@@ -22,7 +24,7 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(cors());
-// app.use(routes.example);
+app.use(routes.deeplink);
 
 app.get('/', async (req, res) => {
   Logger.GET('/');
@@ -37,6 +39,9 @@ const { start, actions_eng, actions_deut } = inline;
 start(bot);
 actions_eng(bot);
 actions_deut(bot);
+
+
+admin(bot);
 
 bot.launch(console.log('\nMagic bot has started!\n'));
 

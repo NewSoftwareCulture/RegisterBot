@@ -4,11 +4,11 @@ import _ from 'lodash';
 const { Schema } = mongoose;
 
 const UserSchema = new Schema({
-  userId: {
-    type: String,
-    required: true,
-    unique: true,
-  },
+  // userId: {
+  //   type: String,
+  //   required: true,
+  //   unique: true,
+  // },
   deeplink: {
     type: String,
   },
