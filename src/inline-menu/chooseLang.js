@@ -5,6 +5,7 @@ const { Markup } = Telegraf;
 
 const lang = (bot) => {
   bot.start((ctx) => {
+    // Убрать консольлог перед продой!
     console.log('Пользователь:', ctx.from.id, ctx.from.first_name, ctx.from.last_name, ctx.from.username);
     ctx.reply("📈 Registration - Trading Group 📉\n\nPlease choose your language:", Markup.inlineKeyboard([
       [Markup.callbackButton("English", "English_lang")],
