@@ -1,4 +1,5 @@
 import Telegraf from 'telegraf';
+import config from '../../../config';
 const { Markup } = Telegraf;
 
 const text = `📈 Registration - Trading Group 📉\n\n` + 
@@ -11,7 +12,7 @@ const text = `📈 Registration - Trading Group 📉\n\n` +
 `If you have any questions, Florian and his team are always at your disposal. 👥 👍` +
 `Please note and read the mandatory risk warning for financial products at:\n\n` +
 `/disclaimer`;
-const URL = "https://tcd.me/cfdstrade?payload=c4faz";
+const URL = process.env.REGISTRATION_URL || config.REGISTRATION_URL;
 
 const main = (bot, ctx) => {
   ctx.reply(text, Markup.inlineKeyboard([
