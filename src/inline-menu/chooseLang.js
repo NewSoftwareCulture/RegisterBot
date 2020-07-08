@@ -17,7 +17,6 @@ const lang = (bot) => {
     });
     bot.action('Deutsch_lang', (ctx, next) => {
       return main.main_deut(this, ctx);
-      // return ctx.reply('Deutsch lang active!').then(() => next())
     });
   });
 };
