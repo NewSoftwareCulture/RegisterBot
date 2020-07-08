@@ -32,10 +32,11 @@ app.get('/', async (req, res) => {
 // bot.command('oldschool', (ctx) => ctx.reply('Hello'))
 // bot.command('hipster', Telegraf.reply('λ'))
 
-const { start, actions_eng } = inline;
+const { start, actions_eng, actions_deut } = inline;
 
 start(bot);
 actions_eng(bot);
+actions_deut(bot);
 
 bot.launch(console.log('\nMagic bot has started!\n'));
 

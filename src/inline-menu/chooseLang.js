@@ -13,10 +13,11 @@ const lang = (bot) => {
     ]).extra());
 
     bot.action('English_lang', (ctx, next) => {
-      return main.main_eng(this, ctx)
+      return main.main_eng(this, ctx);
     });
     bot.action('Deutsch_lang', (ctx, next) => {
-      return ctx.reply('Deutsch lang active!').then(() => next())
+      return main.main_deut(this, ctx);
+      // return ctx.reply('Deutsch lang active!').then(() => next())
     });
   });
 };
