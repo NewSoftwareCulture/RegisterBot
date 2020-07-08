@@ -3,10 +3,7 @@ const actions = (bot) => {
   require('./BasicsAndTutorial').default(bot);
   require('./ContactOrHelp').default(bot);
   require('./RandomResult').default(bot);
-  // require('./RegistrationStatus').default(bot);
-  // actionLangs: require('.').default,
-  // actionLangs: require('.').default,
-  // actionLangs: require('.').default,
+  require('./RegistrationStatus').default(bot);
 };
 
 export default actions;
