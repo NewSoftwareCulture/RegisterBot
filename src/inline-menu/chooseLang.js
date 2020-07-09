@@ -1,5 +1,5 @@
 import Telegraf from 'telegraf';
-import DB from '../DB/index';
+import DB from '../DB';
 import main from './index';
 
 const { Markup } = Telegraf;
