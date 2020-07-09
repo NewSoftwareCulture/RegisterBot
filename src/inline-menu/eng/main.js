@@ -1,6 +1,8 @@
 import Telegraf from 'telegraf';
 import config from '../../../config';
+import DB from '../../DB';
 const { Markup } = Telegraf;
+const { saveOrUpd } = DB;
 
 const URL = process.env.REGISTRATION_URL || config.REGISTRATION_URL;
 
@@ -15,7 +17,8 @@ const text = `📈 Registration - Trading Group 📉\n\n` +
 `Please note and read the mandatory risk warning for financial products at:\n\n` +
 `/disclaimer`;
 
-const main = (bot, ctx) => {
+const main = async(bot, ctx) => {
+  await saveOrUpd({userId: ctx.from.id, stepStatus: 'start'});
   ctx.reply(text, Markup.inlineKeyboard([
     [Markup.urlButton("📝 To Broken Registration", URL)],
     [Markup.callbackButton("🎓 Basics & Tutorial", "Basics_and_Tutorial_1")],

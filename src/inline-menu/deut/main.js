@@ -1,6 +1,8 @@
 import Telegraf from 'telegraf';
 import config from '../../../config';
+import DB from '../../DB';
 const { Markup } = Telegraf;
+const { saveOrUpd } = DB;
 
 const URL = process.env.REGISTRATION_URL || config.REGISTRATION_URL;
 
@@ -15,7 +17,8 @@ const text = `📈 Anmeldung - Trading Group 📉\n\n` +
 `Bitte beachte und lese den obligatorischen Risikohinweis für Finanzprodukte unter:\n` + 
 `/disclaimer`;
 
-const main = (bot, ctx) => {
+const main = async(bot, ctx) => {
+  await saveOrUpd({userId: ctx.from.id, stepStatus: 'start'});
   ctx.reply(text, Markup.inlineKeyboard([
     [Markup.urlButton("📝 Zur Brokeranmeldung", URL)],
     [Markup.callbackButton("🎓 Grundlagen & Erklärung", "Basics_and_Tutorial_1")],
