@@ -1,3 +1,3 @@
 export default {
-    deeplink: require('./deeplink').default,
+    router: require('./deeplink').default,
 }

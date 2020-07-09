@@ -6,9 +6,9 @@ import bodyParser from 'body-parser';
 import Telegraf from 'telegraf';
 import { Logger } from './utils'
 
-import inline from './inline-menu/index';
+import inline from './inline-menu';
 import routes from './routes';
-import admin from './admin/index';
+import admin from './admin';
 import config from '../config';
 
 const uri = process.env.MONGO_URI || config.MONGO_URI;
@@ -24,7 +24,7 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(cors());
-app.use(routes.deeplink);
+app.use(routes.router);
 
 app.get('/', async (req, res) => {
   Logger.GET('/');
@@ -36,10 +36,9 @@ app.get('/', async (req, res) => {
 
 const { start, actions_eng, actions_deut } = inline;
 
-start(bot);
+start(bot, app);
 actions_eng(bot);
 actions_deut(bot);
-
 
 admin(bot);
 
