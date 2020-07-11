@@ -1,1 +1,1 @@
-# RegisterBot
+# Trading Register Bot

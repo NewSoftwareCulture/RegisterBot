@@ -4,7 +4,7 @@ import RandomResult from '../RandomResult';
 const { Markup } = Telegraf;
 
 const about = (bot) => {
-    bot.action('RandomResult', (ctx, next) => {
+    bot.action('DEUT_RandomResult', (ctx, next) => {
       return RandomResult(ctx)
     });
 };

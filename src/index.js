@@ -31,9 +31,6 @@ app.get('/', async (req, res) => {
   res.send('Hello World');
 });
 
-// bot.command('oldschool', (ctx) => ctx.reply('Hello'))
-// bot.command('hipster', Telegraf.reply('λ'))
-
 const { start, actions_eng, actions_deut } = inline;
 
 start(bot, app);

@@ -1,17 +1,14 @@
 import mongoose from 'mongoose';
-import _ from 'lodash';
+import { pick } from 'lodash';
 
 const { Schema } = mongoose;
 
 const UserSchema = new Schema({
   userId: {
     type: Number,
-    required: true,
   },
   deeplink: {
     type: String,
-    required: true,
-    unique: true,
   },
   stepStatus: {
     type: String,
@@ -21,7 +18,7 @@ const UserSchema = new Schema({
 });
 
 UserSchema.methods.toJSON = function () {
-  return _.pick(this, ['userId', 'deeplink', 'stepStatus']);
+  return pick(this, ['userId', 'deeplink', 'stepStatus']);
 };
 
 export default mongoose.model('User', UserSchema);

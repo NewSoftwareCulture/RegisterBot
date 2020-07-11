@@ -4,7 +4,7 @@ import ContactOrHelp from '../ContactOrHelp';
 const { Markup } = Telegraf;
 
 const contact = (bot) => {
-    bot.action('Contact_or_Help', (ctx, next) => {
+    bot.action('DEUT_Contact_or_Help', (ctx, next) => {
       return ContactOrHelp(ctx);
     });
 };
