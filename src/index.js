@@ -25,6 +25,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 app.use(routes.router);
+app.use(routes.admin);
 
 app.get('/', async (req, res) => {
   Logger.GET('/');
@@ -36,7 +37,6 @@ const { start, actions_eng, actions_deut } = inline;
 start(bot, app);
 actions_eng(bot);
 actions_deut(bot);
-
 admin(bot);
 
 bot.launch(console.log('\nMagic bot has started!\n'));
